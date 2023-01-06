@@ -1,4 +1,4 @@
-export interface postSignUpParma {
+export interface postSignUpLoginParma {
   email: string;
   password: string;
 }

@@ -20,7 +20,6 @@ const Signup = () => {
         <input
           id="email"
           type="text"
-          placeholder="test@email.com"
           {...register("email", {
             required: "이메일은 필수 입력입니다.",
             pattern: {
@@ -33,7 +32,6 @@ const Signup = () => {
         <input
           id="password"
           type="password"
-          placeholder="****************"
           {...register("password", {
             required: "비밀번호는 필수 입력입니다.",
             minLength: {

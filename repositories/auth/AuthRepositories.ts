@@ -1,14 +1,33 @@
 import customAxios from "lib/customAxios";
-import { postSignUpParma } from "./AuthRepositorues.param";
+import Token from "lib/Token";
+import { postSignUpLoginParma } from "./AuthRepositorues.param";
 
 class AuthRepositories {
-  public async postSignUp({ email, password }: postSignUpParma) {
+  public async postSignUp({ email, password }: postSignUpLoginParma) {
     try {
-      const { data } = await customAxios.post("/users/create", {
+      const {
+        data: { message },
+      } = await customAxios.post("/users/create", {
         email,
         password,
       });
-      alert(data.message);
+      alert(message);
+      location.href = "/auth/login";
+    } catch (error) {
+      alert(error);
+    }
+  }
+
+  public async postLogin({ email, password }: postSignUpLoginParma) {
+    try {
+      const {
+        data: { token, message },
+      } = await customAxios.post("/users/login", {
+        email,
+        password,
+      });
+      Token.setToken("token", token);
+      alert(message);
       location.href = "/";
     } catch (error) {
       alert(error);
