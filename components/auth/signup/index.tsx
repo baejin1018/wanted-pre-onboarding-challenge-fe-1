@@ -5,7 +5,7 @@ const Signup = () => {
   const {
     register,
     handleSubmit,
-    formState: { isSubmitting },
+    formState: { isValid },
   } = useForm();
 
   return (
@@ -40,7 +40,7 @@ const Signup = () => {
             },
           })}
         />
-        <button type="submit" disabled={isSubmitting}>
+        <button type="submit" disabled={!isValid}>
           회원가입
         </button>
       </form>

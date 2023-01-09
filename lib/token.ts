@@ -1,6 +1,6 @@
 class Token {
   public getToken(key: string): string | null {
-    return localStorage.getItem(key);
+    return typeof window !== "undefined" ? localStorage.getItem(key) : null;
   }
   public setToken(key: string, token: string) {
     localStorage.setItem(key, token);

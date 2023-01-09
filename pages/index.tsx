@@ -1,6 +1,5 @@
 import withAuth from "components/HOC/withAuth";
 import Home from "components/Home";
-
 const home = () => {
   return (
     <>
@@ -8,4 +7,5 @@ const home = () => {
     </>
   );
 };
+
 export default withAuth(home);
