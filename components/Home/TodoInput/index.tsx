@@ -9,7 +9,7 @@ const TodoInput = () => {
   } = useForm();
 
   return (
-    <div>
+    <React.Fragment>
       <form
         onSubmit={handleSubmit(({ title, content }) =>
           TodoRepositories.createTodo({ title, content })
@@ -35,7 +35,7 @@ const TodoInput = () => {
           확인
         </button>
       </form>
-    </div>
+    </React.Fragment>
   );
 };
 

@@ -2,11 +2,15 @@ import { useEffect, useState } from "react";
 import TodoRepositories from "repositories/todo/TodoRepositories";
 
 const useGetTodo = () => {
-  const [todos, setTodos] = useState([]);
   const todoData = TodoRepositories.getTodo();
+  const [todos, setTodos] = useState([]);
   useEffect(() => {
-    setTodos(todoData);
-  }, []);
+    console.log("TDD", todoData);
+  });
+  // useEffect(() => {
+  //   console.log("todoData", todoData);
+  //   setTodos(todoData);
+  // }, []);
 
   return todos;
 };

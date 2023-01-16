@@ -6,11 +6,12 @@ class TodoRepositories {
     const {
       data: { data },
     } = await customAxios.get("/todos");
+    console.log(data);
     return data;
   }
 
   public async createTodo({ title, content }: postTodoParam) {
-    customAxios.post("/todos", { title, content });
+    await customAxios.post("/todos", { title, content });
   }
 }
 

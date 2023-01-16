@@ -1,6 +1,6 @@
 import customAxios from "lib/customAxios";
 import Token from "lib/Token";
-import { postSignUpLoginParma } from "./AuthRepositorues.param";
+import { postSignUpLoginParma } from "./AuthRepositories.param";
 
 class AuthRepositories {
   public async postSignUp({ email, password }: postSignUpLoginParma) {
