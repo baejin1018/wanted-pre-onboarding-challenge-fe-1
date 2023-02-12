@@ -1,22 +1,12 @@
-import { useForm } from "react-hook-form";
-import AuthRepositories from "repositories/auth/AuthRepositories";
+import useAuth from "../hook/useAuth";
 import { LoginDiv } from "./style";
 
 const Login = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { isValid },
-  } = useForm();
-
+  const { handleSubmit, register, isValid, submitLogin } = useAuth();
   return (
     <LoginDiv>
       <h1>로그인</h1>
-      <form
-        onSubmit={handleSubmit(({ email, password }) =>
-          AuthRepositories.postLogin({ email, password })
-        )}
-      >
+      <form onSubmit={handleSubmit(submitLogin)}>
         <label htmlFor="email">이메일</label>
         <input
           id="email"
@@ -42,7 +32,7 @@ const Login = () => {
           })}
         />
         <button type="submit" disabled={!isValid}>
-          회원가입
+          로그인
         </button>
       </form>
     </LoginDiv>

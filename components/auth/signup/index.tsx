@@ -1,21 +1,12 @@
-import { useForm } from "react-hook-form";
-import AuthRepositories from "repositories/auth/AuthRepositories";
+import useAuth from "../hook/useAuth";
 
 const Signup = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { isValid },
-  } = useForm();
+  const { handleSubmit, register, isValid, submitSignUp } = useAuth();
 
   return (
     <div>
       <h1>회원가입</h1>
-      <form
-        onSubmit={handleSubmit(({ email, password }) =>
-          AuthRepositories.postSignUp({ email, password })
-        )}
-      >
+      <form onSubmit={handleSubmit(submitSignUp)}>
         <label htmlFor="email">이메일</label>
         <input
           id="email"
