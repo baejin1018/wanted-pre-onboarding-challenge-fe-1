@@ -1,21 +1,19 @@
 import withAuth from "components/HOC/withAuth";
 import React from "react";
-import useGetTodo from "./hook/useGetTodo";
-import LogoutButton from "./LogOutButton";
+import LogoutButton from "components/Common/LogOutButton";
 import TodoInput from "./TodoInput";
 import TodoItem from "./TodoItem";
+import { useGetTodosQuery } from "queries/todo/todo.query";
 
 const Home = () => {
-  const todos = useGetTodo();
-
+  const data = useGetTodosQuery();
+  console.log(data);
   return (
     <React.Fragment>
-      <LogoutButton />
-      <h1>Todo</h1>
       <TodoInput />
-      {todos.map((data) => {
-        return <TodoItem data={data} />;
-      })}
+      {/* {todos.map((data) => {
+        return <TodoItem data={data} key={Math.random()} />;
+      })} */}
     </React.Fragment>
   );
 };
