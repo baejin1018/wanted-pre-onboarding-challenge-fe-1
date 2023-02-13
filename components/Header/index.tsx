@@ -3,14 +3,14 @@ import Link from "next/link";
 import React from "react";
 import useLoginCheck from "./hook/useLoginCheck";
 import useSelectNavItem from "./hook/useSelectNavItem";
-import { HeaderContainer, NavCotainer, NavItem } from "./style";
+import { HeaderContainer, HeaderTitle, NavCotainer, NavItem } from "./style";
 
 const Header = () => {
   const { selectHome, selectSignup, selectLogin } = useSelectNavItem();
   const isLogin = useLoginCheck();
   return (
     <HeaderContainer>
-      <h3>Todo</h3>
+      <HeaderTitle>Todo</HeaderTitle>
       <NavCotainer isLogin>
         <NavItem fontColor={selectHome}>
           <Link href="/">Home</Link>

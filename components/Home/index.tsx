@@ -1,20 +1,25 @@
 import withAuth from "components/HOC/withAuth";
-import React from "react";
-import LogoutButton from "components/Common/LogOutButton";
 import TodoInput from "./TodoInput";
 import TodoItem from "./TodoItem";
 import { useGetTodosQuery } from "queries/todo/todo.query";
+import { todoDataType } from "types/todo/todo.type";
+import TodoTitle from "./TodoTitle";
+import { TodoInputContentContainer, TodoItemContainer } from "./style";
 
 const Home = () => {
-  const data = useGetTodosQuery();
-  console.log(data);
+  const { data: todos } = useGetTodosQuery();
   return (
-    <React.Fragment>
-      <TodoInput />
-      {/* {todos.map((data) => {
-        return <TodoItem data={data} key={Math.random()} />;
-      })} */}
-    </React.Fragment>
+    <>
+      <TodoTitle />
+      <TodoInputContentContainer>
+        <TodoInput />
+        <TodoItemContainer>
+          {todos?.data.map((data: todoDataType) => {
+            return <TodoItem data={data} key={data.id} />;
+          })}
+        </TodoItemContainer>
+      </TodoInputContentContainer>
+    </>
   );
 };
 

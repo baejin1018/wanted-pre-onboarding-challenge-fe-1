@@ -1,11 +1,10 @@
-import React from "react";
-
+import { TodoEachItemContainer, TodoItemTitle } from "./style";
 const TodoItem = ({ data }: any) => {
   return (
-    <div>
-      <h3>{data.title}</h3>
+    <TodoEachItemContainer>
+      <TodoItemTitle>{data.title}</TodoItemTitle>
       <p>{data.content} </p>
-    </div>
+    </TodoEachItemContainer>
   );
 };
 

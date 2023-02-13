@@ -6,6 +6,9 @@ const GlobalStyle = () => {
     * {
       box-sizing: border-box;
     }
+    h1 {
+      font-family: "Titillium Web", sans-serif !important;
+    }
     ${reset}
   `;
   return <Global styles={style} />;

@@ -1,16 +1,13 @@
 import customAxios from "lib/customAxios";
-import { postTodoParam } from "./TodoRepositories.param";
+import { postTodoType } from "types/todo/todo.type";
 
 class TodoRepositories {
-  public async getTodo() {
-    const {
-      data: { data },
-    } = await customAxios.get("/todos");
-    console.log(data);
+  public async getTodos() {
+    const { data } = await customAxios.get("/todos");
     return data;
   }
 
-  public async createTodo({ title, content }: postTodoParam) {
+  public async createTodo({ title, content }: postTodoType): Promise<void> {
     await customAxios.post("/todos", { title, content });
   }
 }

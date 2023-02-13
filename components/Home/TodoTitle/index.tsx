@@ -1,9 +1,11 @@
+import { TodoTitleContainer, TodoLogoTitle, TodoMiniTitle } from "./style";
+
 const TodoTitle = () => {
   return (
-    <>
-      <h1>Todo</h1>
-      <p>열심히 자신이 약속한 일을 지켜봐요</p>
-    </>
+    <TodoTitleContainer>
+      <TodoLogoTitle>Todo</TodoLogoTitle>
+      <TodoMiniTitle>자신이 약속한 일을 지켜봐요</TodoMiniTitle>
+    </TodoTitleContainer>
   );
 };
 
