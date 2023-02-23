@@ -8,3 +8,7 @@ export interface todoDataType extends postTodoType {
   readonly createdAt: string;
   readonly updatedAt: string;
 }
+
+export interface deleteTodoType {
+  id: string;
+}

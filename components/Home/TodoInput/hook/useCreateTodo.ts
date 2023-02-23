@@ -1,7 +1,7 @@
 import { useQueryClient } from "@tanstack/react-query";
 import { usePostTodoMutation } from "queries/todo/todo.query";
 import { useForm } from "react-hook-form";
-import { postTodoType } from "types/todo/todo.type";
+import { postTodoType } from "repositories/todo/TodoRepositories.param";
 const useCreateTodo = () => {
   const {
     register,

@@ -2,14 +2,18 @@ import withAuth from "components/HOC/withAuth";
 import TodoInput from "./TodoInput";
 import TodoItem from "./TodoItem";
 import { useGetTodosQuery } from "queries/todo/todo.query";
-import { todoDataType } from "types/todo/todo.type";
+import { todoDataType } from "repositories/todo/TodoRepositories.param";
 import TodoTitle from "./TodoTitle";
-import { TodoInputContentContainer, TodoItemContainer } from "./style";
+import {
+  TodoContainer,
+  TodoInputContentContainer,
+  TodoItemContainer,
+} from "./style";
 
 const Home = () => {
   const { data: todos } = useGetTodosQuery();
   return (
-    <>
+    <TodoContainer>
       <TodoTitle />
       <TodoInputContentContainer>
         <TodoInput />
@@ -19,7 +23,7 @@ const Home = () => {
           })}
         </TodoItemContainer>
       </TodoInputContentContainer>
-    </>
+    </TodoContainer>
   );
 };
 

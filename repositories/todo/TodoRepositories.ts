@@ -1,5 +1,8 @@
 import customAxios from "lib/customAxios";
-import { postTodoType } from "types/todo/todo.type";
+import {
+  deleteTodoType,
+  postTodoType,
+} from "repositories/todo/TodoRepositories.param";
 
 class TodoRepositories {
   public async getTodos() {
@@ -9,6 +12,10 @@ class TodoRepositories {
 
   public async createTodo({ title, content }: postTodoType): Promise<void> {
     await customAxios.post("/todos", { title, content });
+  }
+
+  public async deleteTodo({ id }: deleteTodoType) {
+    await customAxios.delete(`/todos/${id}`);
   }
 }
 
