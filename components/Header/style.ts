@@ -14,7 +14,7 @@ export const HeaderTitle = styled.h1`
   font-size: 1.5rem;
   color: #5cb85c;
 `;
-export const NavCotainer = styled.ul`
+export const NavCotainer = styled.ul<{ isLogin: Boolean }>`
   width: ${(props) => (props.isLogin ? "10%" : "30%")};
   height: 38px;
   display: flex;

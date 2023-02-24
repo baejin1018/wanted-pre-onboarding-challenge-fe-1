@@ -9,9 +9,11 @@ import {
   TodoInputContentContainer,
   TodoItemContainer,
 } from "./style";
+import useModal from "./TodoItem/hook/useModal";
 
 const Home = () => {
   const { data: todos } = useGetTodosQuery();
+
   return (
     <TodoContainer>
       <TodoTitle />

@@ -1,8 +1,8 @@
 import { useQueryClient } from "@tanstack/react-query";
 import { useDeleteTodoMutation } from "queries/todo/todo.query";
-import { deleteTodoType } from "repositories/todo/TodoRepositories.param";
+import { deleteAndGetTodoByIdTodoType } from "repositories/todo/TodoRepositories.param";
 
-const useDeleteTodo = ({ id }: deleteTodoType) => {
+const useDeleteTodo = ({ id }: deleteAndGetTodoByIdTodoType) => {
   const queryClient = useQueryClient();
   const deleteTodoMutation = useDeleteTodoMutation();
 

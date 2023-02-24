@@ -15,6 +15,7 @@ export const TodoItemContainer = styled.div`
 `;
 
 export const TodoContainer = styled.div`
+  position: relative;
   height: 600px;
   width: 100%;
 `;

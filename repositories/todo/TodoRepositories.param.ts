@@ -9,6 +9,10 @@ export interface todoDataType extends postTodoType {
   readonly updatedAt: string;
 }
 
-export interface deleteTodoType {
+export interface deleteAndGetTodoByIdTodoType {
+  id: string;
+}
+
+export interface updateTodoType extends postTodoType {
   id: string;
 }
